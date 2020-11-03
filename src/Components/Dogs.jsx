@@ -9,7 +9,7 @@ import BarsorChaika from "../dogPictures/Bars-or-Chaika.jpg";
 import Belka from "../dogPictures/Belka.jpg";
 import Belyanka from "../dogPictures/Belyanka.jpg";
 import Bulba from "../dogPictures/Bulba.jpg";
-import Chernushka from "../dogPictures/Chernuskha.jpg";
+import Chernuskha from "../dogPictures/Chernuskha.jpg";
 import Chizhik from "../dogPictures/Chizhik.jpg";
 import Damka2 from "../dogPictures/Damka-2.jpg";
 import Damka from "../dogPictures/Damka.jpg";
@@ -72,7 +72,7 @@ class Dogs extends Component {
     Belka: Belka,
     Belyanka: Belyanka,
     Bulba: Bulba,
-    Chernushka: Chernushka,
+    Chernuskha: Chernuskha,
     Chizhik: Chizhik,
     "Damka-2": Damka2,
     Damka: Damka,
@@ -659,12 +659,14 @@ class Dogs extends Component {
     // Drawing the legend
     let [mouse_x, mouse_y] = d3.pointer(event);
     let legend_x_position = mouse_x <= 500 ? window.innerWidth - 470 : 30;
+    let legend_y_position =
+      mouse_y >= window.innerHeight - 400 ? mouse_y - 100 : mouse_y + 50;
     const legend = d3
       .select("#dogs")
       .append("div")
       .attr("id", "legend")
       .style("left", legend_x_position + "px")
-      .style("top", mouse_y + 50 + "px");
+      .style("top", legend_y_position - 50 + "px");
 
     legend
       .attr("opacity", 0)
