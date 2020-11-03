@@ -1,38 +1,105 @@
-.App {
-  text-align: center;
+body,
+#legend {
+  background-image: url("/src/background/stars.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#title-card,
+#title-card svg {
+  width: 100vw;
+  height: 200px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#dogs,
+#dogs svg {
+  width: 100vw;
+  height: 200vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#dog-lines path,
+#legend svg path {
+  stroke: #fafafa;
+  stroke-width: 10;
+  stroke-opacity: 0.5;
+}
+
+#info-tab {
+  position: absolute;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-flow: column;
+  width: 400px;
+  height: auto;
+  text-align: start;
+  padding: 0.5rem;
+  background-color: #fff;
+  color: #313639;
+  border: 1px solid #313639;
+  border-radius: 8px;
+  transform-origin: center left;
 }
 
-.App-link {
-  color: #61dafb;
+#legend {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-flow: column;
+  width: 400px;
+  height: auto;
+  text-align: start;
+  padding: 0.5rem;
+  color: #313639;
+  border: 3px solid;
+  border-image: linear-gradient(#f1da36, #d88ae8) 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#legend::after {
+  border-radius: 8px;
+}
+
+#legend svg {
+  width: 400px;
+  height: 400px;
+}
+
+#legend svg text {
+  stroke: #fafafa;
+  fill: #fafafa;
+}
+
+img {
+  align-self: center;
+  width: 380px;
+  height: 380px;
+  border: 3px solid black;
+  border-radius: 8px;
+}
+
+text {
+  pointer-events: none;
+  font-family: "Lucida Console";
+}
+
+h1 {
+  font-family: "Lucida Console";
+  font-weight: 100;
+  font-size: 20px;
+  text-decoration: none;
+  text-align: right;
+  color: #fafafa;
+}
+
+h1 a {
+  text-decoration: none;
+  color: #f1da36;
+}
+
+h1 a:hover {
+  color: #d88ae8;
 }
