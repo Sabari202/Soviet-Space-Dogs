@@ -3,55 +3,7 @@ import * as d3 from "d3";
 // importing data
 import DogsDatabaseCSV from "../data/Dogs-Database.csv";
 import FlightsDatabaseCSV from "../data/Flights-Database.csv";
-// Importing dog images
-import Albina from "../dogPictures/Albina.jpg";
-import BarsorChaika from "../dogPictures/Bars-or-Chaika.jpg";
-import Belka from "../dogPictures/Belka.jpg";
-import Belyanka from "../dogPictures/Belyanka.jpg";
-import Bulba from "../dogPictures/Bulba.jpg";
-import Chernuskha from "../dogPictures/Chernuskha.jpg";
-import Chizhik from "../dogPictures/Chizhik.jpg";
-import Damka2 from "../dogPictures/Damka-2.jpg";
-import Damka from "../dogPictures/Damka.jpg";
-import Dezik from "../dogPictures/Dezik.jpg";
-import Dzhoyna from "../dogPictures/Dzhoyna.jpg";
-import Knopka from "../dogPictures/Knopka.jpg";
-import Kometka from "../dogPictures/Kometka.jpg";
-import Kozyavka from "../dogPictures/Kozyavka.jpg";
-import KusachkaorOtavazhnaya from "../dogPictures/Kusachka-or-Otvazhnaya.jpg";
-import Laika from "../dogPictures/Laika.jpg";
-import Linda from "../dogPictures/Linda.jpg";
-import Lisa2 from "../dogPictures/Lisa-2.jpg";
-import Lisa from "../dogPictures/Lisa.jpg";
-import Lisichka from "../dogPictures/Lisichka.jpg";
-import Malyok from "../dogPictures/Malyok.jpg";
-import Malyshka from "../dogPictures/Malyshka.jpg";
-import Mishika from "../dogPictures/Mishika.jpg";
-import Mishka2 from "../dogPictures/Mishka-2.jpg";
-import Modnitsa from "../dogPictures/Modnitsa.jpg";
-import Mushka from "../dogPictures/Mushka.jpg";
-import Neputeviy from "../dogPictures/Neputeviy.jpg";
-import Neva from "../dogPictures/Neva.jpg";
-import Palma2 from "../dogPictures/Palma-2.jpg";
-import Palma from "../dogPictures/Palma.jpg";
-import Pchyolka from "../dogPictures/Pchyolka.jpg";
-import Pestraya from "../dogPictures/Pestraya.jpg";
-import Pushok from "../dogPictures/Pushok.jpg";
-import Rita from "../dogPictures/Rita.jpg";
-import Ryzhaya from "../dogPictures/Ryzhaya.jpg";
-import Ryzhik2 from "../dogPictures/Ryzhik-2.jpg";
-import Ryzhik3 from "../dogPictures/Ryzhik-3.jpg";
-import Ryzhik from "../dogPictures/Ryzhik.jpg";
-import Shutka from "../dogPictures/Shutka.jpg";
-import Smeliy from "../dogPictures/Smeliy.jpg";
-import SnezhinkaorZhemchuzhnaya from "../dogPictures/Snezhinka-or-Zhemchuzhnaya.jpg";
-import Strelka from "../dogPictures/Strelka.jpg";
-import Tsygan from "../dogPictures/Tsygan.jpg";
-import UgolyokorSnezhok from "../dogPictures/Ugolyok-or-Snezhok.jpg";
-import VeterokorBzdunok from "../dogPictures/Veterok-or-Bzdunok.jpg";
-import Zhulba from "../dogPictures/Zhulba.jpg";
-import ZIB from "../dogPictures/ZIB.jpg";
-import Zvezdochka from "../dogPictures/Zvezdochka.jpg";
+
 
 class Dogs extends Component {
   // Setting up the global variables
@@ -66,56 +18,7 @@ class Dogs extends Component {
   currentOpenInfoTab = undefined;
   infoTabXPosition;
   infoTabXPositionafterTransition;
-  imageMap = {
-    Albina: Albina,
-    "Bars-or-Chaika": BarsorChaika,
-    Belka: Belka,
-    Belyanka: Belyanka,
-    Bulba: Bulba,
-    Chernuskha: Chernuskha,
-    Chizhik: Chizhik,
-    "Damka-2": Damka2,
-    Damka: Damka,
-    Dezik: Dezik,
-    Dzhoyna: Dzhoyna,
-    Knopka: Knopka,
-    Kometka: Kometka,
-    Kozyavka: Kozyavka,
-    "Kusachka-or-Otavazhnaya": KusachkaorOtavazhnaya,
-    Laika: Laika,
-    Linda: Linda,
-    "Lisa-2": Lisa2,
-    Lisa: Lisa,
-    Lisichka: Lisichka,
-    Malyok: Malyok,
-    Malyshka: Malyshka,
-    Mishika: Mishika,
-    "Mishka-2": Mishka2,
-    Modnitsa: Modnitsa,
-    Mushka: Mushka,
-    Neputeviy: Neputeviy,
-    Neva: Neva,
-    "Palma-2": Palma2,
-    Palma: Palma,
-    Pchyolka: Pchyolka,
-    Pestraya: Pestraya,
-    Pushok: Pushok,
-    Rita: Rita,
-    Ryzhaya: Ryzhaya,
-    "Ryzhik-2": Ryzhik2,
-    "Ryzhik-3": Ryzhik3,
-    Ryzhik: Ryzhik,
-    Shutka: Shutka,
-    Smeliy: Smeliy,
-    "Snezhinka-or-Zhemchuzhnaya": SnezhinkaorZhemchuzhnaya,
-    Strelka: Strelka,
-    Tsygan: Tsygan,
-    "Ugolyok-or-Snezhok": UgolyokorSnezhok,
-    "Veterok-or-Bzdunok": VeterokorBzdunok,
-    Zhulba: Zhulba,
-    ZIB: ZIB,
-    Zvezdochka: Zvezdochka,
-  };
+ 
   position2D = [
     [1110, 380], // Repeated because Dezik was not being read
     [1110, 380], //1
@@ -173,7 +76,7 @@ class Dogs extends Component {
   drawText;
   drawPaw;
   drawConnectionLines;
-  displayInfoTab;
+  // displayInfoTab;
   circlesExitTrasitions;
   circleEnterTransitions;
   drawLegend;
@@ -240,12 +143,12 @@ class Dogs extends Component {
     const colorData_on_death = [
       { offset: "0%", color: "#fafafa" },
       { offset: "20%", color: "#fbf3fd" },
-      { offset: "100%", color: "#d88ae8" },
+      { offset: "100%", color: "#e88a8a" },
     ];
     const colorData_on_survival = [
       { offset: "0%", color: "#fafafa" },
       { offset: "20%", color: "#fefcea" },
-      { offset: "100%", color: "#f1da36" },
+      { offset: "100%", color: "#36f155" },
     ];
     const colorData_default = [
       { offset: "0%", color: "#ffffff" },
@@ -397,128 +300,6 @@ class Dogs extends Component {
     });
   };
 
-  displayInfoTab = (event, d) => {
-    let mouse_x = d3.pointer(event)[0];
-    const transitionDuration = 500;
-    this.infoTabXPosition =
-      mouse_x >= window.innerWidth - 500 ? d.x - 440 : d.x + 20;
-    this.infoTabXPositionafterTransition =
-      mouse_x >= window.innerWidth - 500 ? d.x - 500 : d.x + 100;
-    // To remove and re add the info tab on continuous multiple clicks
-    d3.selectAll("#info-tab").remove();
-    const infotab = d3.select("#dogs").append("div").attr("id", "info-tab");
-
-    infotab
-      .style("left", this.infoTabXPosition + "px")
-      .style("top", d.y - 50 + "px")
-      .style("opacity", 0)
-      .transition()
-      .duration(transitionDuration)
-      .style("left", this.infoTabXPositionafterTransition + "px")
-      .style("opacity", 1);
-
-    // Adding information to the infotab
-    // Cleaning up the raw data
-    let flightDates = d.Flights.split(",");
-    let flightInfo = [];
-    let rockets = new Set();
-    let flightDataNotes = new Set();
-    let maxAltitude = Number.MIN_VALUE;
-    flightDates.forEach((date) =>
-      flightInfo.push(this.flightsData.find((d) => d.Date === date))
-    );
-    flightInfo.forEach((flight) => {
-      if (flight.Rocket !== "unknown") rockets.add(flight.Rocket);
-      if (flight["Altitude (km)"] !== "unknown") {
-        if (maxAltitude !== "orbital" || maxAltitude !== "was to be orbital") {
-          if (flight["Altitude (km)"] === "orbital") maxAltitude = "orbital";
-          else if (flight["Altitude (km)"] === "was to be orbital")
-            maxAltitude = "was to be orbital";
-          else maxAltitude = Math.max(maxAltitude, +flight["Altitude (km)"]);
-        }
-      }
-      if (flight.Notes !== "") flightDataNotes.add(flight.Notes);
-    });
-    console.log(d["Name (Latin)"].replaceAll(" ", "-"));
-    // Image
-    infotab
-      .append("img")
-      .attr("src", this.imageMap[d["Name (Latin)"].replaceAll(" ", "-")])
-      .attr(
-        "alt",
-        `A picture of ${d["Name (Latin)"]
-          .replace("or", "/")
-          .replaceAll(" ", "-")}`
-      );
-
-    // Names
-    infotab.append("hr");
-    infotab
-      .append("text")
-      .html(
-        `Name in Latin: &nbsp&nbsp&nbsp<b>${d["Name (Latin)"].replace(
-          "or",
-          "/"
-        )}</b>`
-      );
-
-    infotab
-      .append("text")
-      .html(`Name in English: &nbsp<b>${d["Name (English)"]}</b>`);
-    infotab
-      .append("text")
-      .html(`Name in Cyrillic: <b>${d["Name (Cyrillic)"]}</b>`);
-    // Gender
-    infotab.append("hr");
-    infotab.append("text").html(`Gender: <b>${d.Gender}</b>`);
-    // Flights
-    if (rockets.size > 0) {
-      infotab.append("hr");
-      infotab.append("text").text(`Flew in rockets:`);
-      rockets.forEach((rocket) =>
-        infotab
-          .append("text")
-          .style("padding-left", 150 + "px")
-          .html(`<b>${rocket}</b>`)
-      );
-    }
-    // Altitude
-    if (maxAltitude !== Number.MIN_VALUE) {
-      infotab.append("hr");
-      infotab
-        .append("text")
-        .html(`Max altitude reached(in km): <b>${maxAltitude}</b>`);
-    }
-    // Fate of the Dog
-    let fate = d.Fate.split(" ");
-    infotab.append("hr");
-    infotab
-      .append("text")
-      .html(
-        fate.length < 2
-          ? `Fate of ${d["Name (Latin)"]}: <b>${fate[0]}</b>`
-          : `Fate of ${d["Name (Latin)"]}: <b>${fate[0]} on ${fate[1]}</b>`
-      );
-    // Notes
-    if (d.Notes !== "" || flightDataNotes.size > 0) {
-      infotab.append("hr");
-      infotab.append("text").text("Additional info:");
-    }
-    if (d.Notes !== "") {
-      infotab
-        .append("text")
-        .style("padding-left", 80 + "px")
-        .html(`<b>=> ${d.Notes}</b>`);
-    }
-    if (flightDataNotes.size > 0) {
-      flightDataNotes.forEach((note) => {
-        infotab
-          .append("text")
-          .style("padding-left", 80 + "px")
-          .html(`<b>=> ${note}</b>`);
-      });
-    }
-  };
 
   circlesExitTrasitions = (svg, d) => {
     const transitionDuration = 500;
@@ -885,39 +666,7 @@ class Dogs extends Component {
         }
       })
       .on("click", (event, d) => {
-        if (!this.infoTabIsOpen) {
-          this.infoTabIsOpen = true;
-          this.currentOpenInfoTab = d;
-          // Removing legend
-          d3.selectAll("#legend").remove();
-          this.displayInfoTab(event, d);
-        } else {
-          if (this.currentOpenInfoTab["Name (Latin)"] === d["Name (Latin)"]) {
-            this.infoTabIsOpen = false;
-            // Clossing the Info Tab
-            d3.select("#info-tab")
-              .transition()
-              .duration(transitionDuration)
-              .style("left", this.infoTabXPosition + "px")
-              .style("opacity", 0)
-              .remove();
 
-            this.circlesExitTrasitions(dogsSvg, d);
-          } else {
-            this.circleEnterTransitions(dogsSvg, d);
-            // Clossing the Info Tab
-            d3.select("#info-tab")
-              .transition()
-              .duration(transitionDuration)
-              .style("left", d.x + 20 + "px")
-              .style("opacity", 0)
-              .remove();
-
-            this.circlesExitTrasitions(dogsSvg, this.currentOpenInfoTab);
-            this.currentOpenInfoTab = d;
-            this.displayInfoTab(event, d);
-          }
-        }
       });
 
     // Drawing the paws in the circles and dog name text
@@ -974,7 +723,7 @@ class Dogs extends Component {
       )
       .attr("x", +window.innerWidth / 2 - 20)
       .attr("y", fontSize_yOffset)
-      .text("SOVIET SPACE DOGS");
+      .text(" SPACE DOGS");
   };
 
   render() {
@@ -986,24 +735,17 @@ class Dogs extends Component {
         <div id="dogs">
           <svg></svg>
         </div>
-        <h1>
-          Inspired from&nbsp;
-          <a
-            href="https://old.duncangeere.com/spacedogs/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Soviet Space Dogs Visualization, By Duncan Geere
-          </a>
-        </h1>
+      <h1>
+      
+      </h1>
         <h1>
           A visualization by&nbsp;
           <a
-            href="https://github.com/SumanthVarma798"
+            href="https://github.com/Sabari202"
             target="_blank"
             rel="noreferrer"
           >
-            Sumanth Varma Vitrouthu
+            Sabareeswar senthilvel
           </a>
         </h1>
       </React.Fragment>
